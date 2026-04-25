@@ -1,156 +1,117 @@
 'use client';
-
+import { 
+  Mail, 
+  MessageCircle, 
+  Clock, 
+  Send, 
+  ShieldCheck, 
+  ArrowRight, 
+  MapPin 
+} from 'lucide-react'; // TOUTES les icônes sont ici maintenant
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
-import { sendEmail } from './actions';
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-950 text-white pt-24 pb-12 px-4">
-      <div className="max-w-6xl mx-auto">
+    <main className="relative min-h-screen pt-32 pb-20 px-6 bg-[#f8fafc]">
+      <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* En-tête de la page */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            Parlons de votre projet
-          </h1>
-          <p className="mt-4 text-gray-400 text-lg">
-            Besoin d'une application sécurisée ou d'un audit ? Je vous réponds sous 24h.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 items-stretch min-h-[700px]">
           
-          {/* --- COLONNE GAUCHE : INFOS DE CONTACT --- */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="space-y-8"
-          >
-            <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800">
-              <h2 className="text-2xl font-semibold mb-6">Coordonnées</h2>
+          {/* COLONNE GAUCHE : NOIRE (CONTRASTE MAXIMUM) */}
+          <div className="lg:w-1/3 bg-slate-950 rounded-[4rem] p-12 md:p-16 text-white flex flex-col justify-between shadow-3xl">
+            <div className="space-y-12">
+              <h1 className="text-5xl md:text-6xl font-[1000] uppercase italic tracking-tighter leading-tight italic">
+                Prêt pour <br/><span className="text-blue-500">le décollage ?</span>
+              </h1>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400">
-                    <Mail size={24} />
+              <div className="space-y-8">
+                <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:bg-blue-600 transition-all">
+                    <Mail size={24} className="text-blue-500 group-hover:text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-bold">Email</p>
-                    <p className="text-lg">kenzopancaldi0@gmail.com</p>
+                    <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest mb-1">Email Direct</div>
+                    <div className="text-lg font-bold italic tracking-tighter">hello@kzv.studio</div>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400">
-                    <Phone size={24} />
+                <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:bg-green-500 transition-all">
+                    <MessageCircle size={24} className="text-green-500 group-hover:text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-bold">Téléphone</p>
-                    <p className="text-lg">+33 6 28 95 03 23</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-green-400">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-bold">Localisation</p>
-                    <p className="text-lg">Toulouse, France</p>
+                    <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest mb-1">WhatsApp Business</div>
+                    <div className="text-lg font-bold italic tracking-tighter">+33 6 XX XX XX XX</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Badge Sécurité (pour rassurer) */}
-            <div className="p-6 border border-blue-900/30 bg-blue-900/10 rounded-2xl flex items-start gap-4">
-              <MessageSquare className="text-blue-400 shrink-0" size={24} />
-              <p className="text-sm text-blue-200/70">
-                Toutes vos données de projet sont traitées avec la plus grande confidentialité. 
-                L'échange est sécurisé par un cryptage de bout en bout.
-              </p>
+            <div className="mt-12 pt-12 border-t border-slate-900">
+               <div className="flex items-center gap-3 text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4">
+                 <Clock size={14} /> Réponse sous 24h
+               </div>
+               <p className="text-xs text-slate-400 italic font-bold leading-relaxed">
+                 Chaque demande est traitée personnellement par notre équipe technique. On ne fait pas de copier-coller.
+               </p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* --- COLONNE DROITE : FORMULAIRE --- */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl"
-          >
-            <form action={async (formData) => {
-              const result = await sendEmail(formData);
-                if (result.success) {
-                alert("Message envoyé avec succès !");
-                 } else {
-                  alert("Erreur lors de l'envoi.");
-                    }
-                  }}
-                  className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400">Prénom</label>
-                  <input name='nom'
+          {/* COLONNE DROITE : FORMULAIRE HAUTE VISIBILITÉ */}
+          <div className="lg:w-2/3 bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl shadow-blue-900/10 border-2 border-slate-200">
+            <form className="space-y-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="space-y-3">
+                  <label className="text-[11px] font-black uppercase tracking-widest text-slate-900 ml-4 italic">Votre Nom_</label>
+                  <input 
                     type="text" 
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                    placeholder="Jean"
+                    placeholder="ex: Marc" 
+                    className="w-full bg-slate-100 border-2 border-slate-200 rounded-3xl p-6 italic font-bold text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-blue-600 transition-all outline-none" 
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400">Nom</label>
-                  <input name='prenom'
-                    type="text" 
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                    placeholder="Dupont"
+                <div className="space-y-3">
+                  <label className="text-[11px] font-black uppercase tracking-widest text-slate-900 ml-4 italic">Email Pro_</label>
+                  <input 
+                    type="email" 
+                    placeholder="ex: marc@business.com" 
+                    className="w-full bg-slate-100 border-2 border-slate-200 rounded-3xl p-6 italic font-bold text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-blue-600 transition-all outline-none" 
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Email professionnel</label>
-                <input name='email'
-                  type="email" 
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                  placeholder="jean@entreprise.fr"
-                />
+              <div className="space-y-3">
+                <label className="text-[11px] font-black uppercase tracking-widest text-slate-900 ml-4 italic">Votre Projet_</label>
+                <div className="relative">
+                  <select className="w-full bg-slate-100 border-2 border-slate-200 rounded-3xl p-6 italic font-bold appearance-none outline-none focus:bg-white focus:border-blue-600 text-slate-900 cursor-pointer">
+                    <option>Site Vitrine Alpha</option>
+                    <option>Business Pro</option>
+                    <option>Custom Studio</option>
+                    <option>Maintenance / Autre</option>
+                  </select>
+                  <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-slate-900">
+                    <ArrowRight size={20} className="rotate-90" />
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Sujet</label>
-                <select name='sujet' className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition text-gray-400">
-                  <option value="Création de Dashboard / SaaS">Création de Dashboard / SaaS</option>
-                  <option value="Forfait Maintenance & Sécurité">Forfait Maintenance & Sécurité</option>
-                  <option value="Audit de sécurité">Audit de sécurité</option>
-                  <option value="Autre">Autre demande</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Message</label>
-                <textarea name='message'
-                  rows={4}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                  placeholder="Décrivez brièvement votre besoin..."
+              <div className="space-y-3">
+                <label className="text-[11px] font-black uppercase tracking-widest text-slate-900 ml-4 italic">Votre Message_</label>
+                <textarea 
+                  rows={4} 
+                  placeholder="Expliquez-nous vos objectifs..." 
+                  className="w-full bg-slate-100 border-2 border-slate-200 rounded-3xl p-6 italic font-bold text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-blue-600 transition-all outline-none resize-none"
                 ></textarea>
               </div>
 
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition duration-300 shadow-lg shadow-blue-900/20"
-              >
-                Envoyer ma demande
-                <Send size={18} />
-              </motion.button>
+              <button className="bg-blue-600 text-white px-12 py-8 rounded-3xl font-[1000] uppercase text-sm tracking-[0.4em] shadow-2xl shadow-blue-400/30 hover:bg-slate-950 hover:scale-[1.02] transition-all flex items-center justify-center gap-4 w-full md:w-auto group">
+                Envoyer le Brief <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
+
+              <div className="flex items-center gap-4 text-slate-500 font-bold text-[10px] uppercase tracking-widest pt-8 border-t border-slate-100">
+                 <ShieldCheck size={16} className="text-green-600" /> 
+                 <span>RGPD : Vos données restent strictement confidentielles.</span>
+              </div>
             </form>
-          </motion.div>
+          </div>
 
         </div>
       </div>
