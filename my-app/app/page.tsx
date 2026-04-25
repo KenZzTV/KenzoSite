@@ -139,9 +139,11 @@ export default function HomePage() {
                     Nous créons des sites web sur-mesure, rapides et sécurisés, sans que vous ayez à lever le petit doigt. Pas de frais cachés, juste un site qui performe et vous appartient à 100%.
                 </p>
                 <div className="flex flex-col gap-6 items-start lg:items-end">
-                    <button className="bg-blue-600 text-white px-12 py-8 rounded-[2.5rem] font-[1000] uppercase text-sm tracking-[0.3em] shadow-2xl hover:scale-105 transition-all flex items-center gap-4 group">
-                        Démarrer l&apos;audit <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
-                    </button>
+                    <Link href="/contact?type=audit">
+                      <button className="bg-blue-600 text-white px-12 py-8 rounded-[2.5rem] font-[1000] uppercase text-sm tracking-[0.3em] shadow-2xl hover:scale-105 transition-all flex items-center gap-4 group">
+                        Démarrer l'audit
+                      </button>
+                    </Link>
                     <div className="flex items-center gap-4 text-slate-400 font-black text-[9px] uppercase tracking-[0.2em]">
                         <CheckCircle2 size={14} className="text-green-500" /> Propriété totale du code
                         <CheckCircle2 size={14} className="text-green-500" /> Zéro frais mensuels cachés

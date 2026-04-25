@@ -7,28 +7,24 @@ import {
   Send, 
   ShieldCheck, 
   ArrowRight, 
-  CheckCircle2 // Ajouté pour le succès
+  CheckCircle2,
+  ArrowLeft 
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link';
 import { sendEmail } from './actions'; 
 
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  // La fonction doit être ici pour accéder à setStatus
   async function handleSubmit(formData: FormData) {
-    e.preventDefault();
-
     setStatus('sending');
-    try {
-      const result = await sendEmail(formData);
-      if (result.success) {
-        setStatus('success');
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
+    const result = await sendEmail(formData);
+    
+    if (result.success) {
+      setStatus('success');
+    } else {
       setStatus('error');
     }
   }
@@ -39,9 +35,23 @@ export default function ContactPage() {
         
         <div className="flex flex-col lg:flex-row gap-12 items-stretch min-h-[700px]">
           
-          {/* COLONNE GAUCHE */}
+          {/* COLONNE GAUCHE : NOIRE */}
           <div className="lg:w-1/2 bg-slate-950 rounded-[4rem] p-12 md:p-16 text-white flex flex-col justify-between shadow-3xl">
             <div className="space-y-12">
+              
+              {/* BOUTON RETOUR À L'ACCUEIL */}
+              <Link 
+                href="/" 
+                className="inline-flex items-center gap-3 text-slate-500 hover:text-blue-500 transition-all group mb-4"
+              >
+                <div className="w-10 h-10 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-blue-500 transition-all">
+                  <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] italic">
+                  Retour
+                </span>
+              </Link>
+
               <h1 className="text-5xl md:text-6xl font-[1000] uppercase italic tracking-tighter leading-tight">
                 Prêt pour <br/><span className="text-blue-500">le décollage ?</span>
               </h1>
@@ -78,7 +88,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* COLONNE DROITE */}
+          {/* COLONNE DROITE : FORMULAIRE */}
           <div className="lg:w-2/3 bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl shadow-blue-900/10 border-2 border-slate-200">
             {status === 'success' ? (
               <motion.div 
@@ -140,7 +150,9 @@ export default function ContactPage() {
                 </button>
 
                 {status === 'error' && (
-                  <p className="text-red-500 text-center font-bold italic text-xs uppercase">Oups ! Une erreur est survenue lors de l'envoi.</p>
+                  <p className="text-red-500 text-center font-bold italic text-xs uppercase animate-pulse">
+                    Oups ! Vérifie ta connexion ou ta clé API Resend.
+                  </p>
                 )}
 
                 <div className="flex items-center gap-4 text-slate-500 font-bold text-[10px] uppercase tracking-widest pt-8 border-t border-slate-100">
