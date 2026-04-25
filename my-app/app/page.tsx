@@ -9,7 +9,7 @@ import {
   BarChart3, Fingerprint, MessagesSquare, Lightbulb, Smile
 } from 'lucide-react';
 import Link from 'next/link';
-import { kzvIcon } from '../public/kzv-icon.png';
+import  kzvIcon  from '../public/kzv-icon.png';
 
 // --- FOND 3D INTERACTIF (PHYSIQUE RAYCASTER) ---
 const TechCanvas = () => {
