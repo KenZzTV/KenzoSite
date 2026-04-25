@@ -9,6 +9,7 @@ import {
   BarChart3, Fingerprint, MessagesSquare, Lightbulb, Smile
 } from 'lucide-react';
 import Link from 'next/link';
+import { kzvIcon } from '../public/kzv-icon.png';
 
 // --- FOND 3D INTERACTIF (PHYSIQUE RAYCASTER) ---
 const TechCanvas = () => {
@@ -114,9 +115,7 @@ export default function HomePage() {
       <nav className="fixed top-0 w-full z-50 px-6 py-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur-2xl border border-slate-200 p-4 rounded-[2rem] shadow-xl shadow-blue-900/5">
           <div className="flex items-center gap-3 font-[1000] text-2xl tracking-tighter uppercase italic">
-            <div className="w-10 h-10 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-400/20">
-                <Code2 className="text-white" size={22} />
-            </div>
+            <img src="/kzv-icon.png" alt="logo KZV" width="120" height="120" />
             KZV<span className="text-blue-600">.</span>STUDIO
           </div>
           <div className="hidden lg:flex gap-8 items-center">
@@ -193,7 +192,7 @@ export default function HomePage() {
       {/* 3. SECTION COMPARATIVE : ARTISAN VS MASSE */}
       <section id="comparatif" className="relative z-10 py-40 px-8 max-w-6xl mx-auto">
         <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-[1000] uppercase italic tracking-tighter mb-4 italic">Pourquoi nous ?_</h2>
+            <h2 className="text-4xl md:text-6xl font-[1000] uppercase italic tracking-tighter mb-4 italic text-blue-500">Pourquoi nous ?</h2>
             <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-xs">La différence entre un outil et un succès</p>
         </div>
         
