@@ -131,15 +131,12 @@ export default function HomePage() {
       <section className="relative pt-64 pb-40 px-8 z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 text-white rounded-full font-black text-[10px] uppercase tracking-[0.3em] mb-12 shadow-xl shadow-blue-500/30">
-               <Star size={12} className="fill-white" /> Stratégie & Haute Couture Numérique
-            </div>
-            <h1 className="text-7xl md:text-[11rem] font-[1000] leading-[0.8] tracking-[ -0.05em] uppercase mb-16 italic text-slate-900">
+            <h1 className="text-7xl md:text-[11rem] font-[1000] leading-[0.8] tracking-[ -0.05em] uppercase mb-16 italic text-blue-900">
               Le web,<br /><span className="text-blue-600">sans effort.</span>
             </h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
                 <p className="text-2xl md:text-5xl text-slate-500 font-medium leading-none italic tracking-tighter">
-                    Nous créons des actifs numériques qui travaillent pendant que vous dormez. Propres. Rapides. Redoutables.
+                    Nous créons des sites web sur-mesure, rapides et sécurisés, sans que vous ayez à lever le petit doigt. Pas de frais cachés, juste un site qui performe et vous appartient à 100%.
                 </p>
                 <div className="flex flex-col gap-6 items-start lg:items-end">
                     <button className="bg-blue-600 text-white px-12 py-8 rounded-[2.5rem] font-[1000] uppercase text-sm tracking-[0.3em] shadow-2xl hover:scale-105 transition-all flex items-center gap-4 group">
@@ -160,7 +157,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32">
             <div className="space-y-8">
-              <div className="text-blue-500 font-black text-xs uppercase tracking-[0.5em]">L&apos;Approche_</div>
+              <div className="text-blue-500 font-black text-xs uppercase tracking-[0.5em]">L&apos;Approche</div>
               <h2 className="text-5xl md:text-7xl font-[1000] uppercase italic tracking-tighter leading-none">
                 Le design est une <br/><span className="text-blue-500">stratégie,</span> pas une option.
               </h2>
@@ -170,14 +167,14 @@ export default function HomePage() {
                 Un beau site qui ne convertit pas est une dépense. Un site bien pensé est un investissement. Chez KZV, nous analysons votre marché avant de poser la première brique.
               </p>
               <p>
-                Nous fusionnons la psychologie de l&apos;utilisateur avec une exécution technique de haut vol. Pas de superflu, chaque pixel a une mission.
+                Nous créons des expériences digitales qui captivent, engagent et transforment les visiteurs en clients fidèles. Chaque pixel a un but, chaque interaction est optimisée pour la conversion.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: Lightbulb, t: "Vision Produit", d: "On ne crée pas juste un site, on définit l&apos;outil de croissance de votre entreprise." },
+              { icon: Lightbulb, t: "Vision Produit", d: "On ne crée pas juste un site, on définit l'outil de croissance de votre entreprise." },
               { icon: BarChart3, t: "Data Driven", d: "Optimisation des parcours clients pour transformer chaque visiteur en client." },
               { icon: Fingerprint, t: "Identité Forte", d: "Un design qui ne ressemble à aucun autre. Votre site devient votre signature." }
             ].map((item, i) => (
@@ -212,7 +209,7 @@ export default function HomePage() {
             <div className="bg-blue-600 text-white p-12 rounded-[3.5rem] shadow-2xl shadow-blue-500/20">
                 <h3 className="text-2xl font-[1000] uppercase italic mb-8 italic">Le Studio KZV</h3>
                 <ul className="space-y-6">
-                    {["Vitesse de chargement < 1s", "Design exclusif sur-mesure", "Vous êtes 100% propriétaire", "SEO chirurgical", "Ligne directe avec le créateur"].map((txt, i) => (
+                    {["Vitesse de chargement", "Design exclusif sur-mesure", "Vous êtes 100% propriétaire", "SEO Optimisé", "Ligne directe avec le créateur"].map((txt, i) => (
                         <li key={i} className="flex items-center gap-4 font-black text-xs uppercase italic tracking-tighter">
                             <span className="text-white">✓</span> {txt}
                         </li>
@@ -263,11 +260,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
                 { icon: Lock, t: "Propriété Totale", d: "Contrairement aux agences, je vous donne les clés. Code, domaine, hébergement : tout vous appartient légalement." },
-                { icon: MessagesSquare, t: "Support WhatsApp", d: "Une question ? Une idée ? Un groupe privé pour une réactivité totale au quotidien." },
+                { icon: MessagesSquare, t: "Support Messagerie", d: "Une question ? Une idée ? Une messagerie pour une réactivité totale au quotidien." },
                 { icon: ClipboardCheck, t: "Devis Ferme", d: "Pas de dépassement. Le prix fixé au début est le prix payé à la fin. Point." },
-                { icon: Zap, t: "Livraison Flash", d: "Nous ne prenons pas 6 mois pour sortir un site. L&apos;efficacité est notre priorité absolue." },
-                { icon: Smartphone, t: "Mobile Native", d: "Votre site sera plus beau sur un téléphone que sur un ordinateur. C&apos;est là qu&apos;est votre trafic." },
-                { icon: Handshake, t: "Sérénité 90j", d: "Trois mois de support technique offerts après la livraison pour ajuster chaque détail." }
+                { icon: Zap, t: "TRAVAIL DE PRÉCISION", d: "Je ne travaille pas à la chaîne. En tant que développeur dédié, je consacre le temps nécessaire à chaque ligne de code pour garantir un résultat robuste, propre et parfaitement conforme à vos besoins." },
+                { icon: Smartphone, t: "Mobile Native", d: "Votre site sera aussi beau sur un téléphone que sur un ordinateur. C'est là qu'est votre trafic." },
+                { icon: Handshake, t: "DÉPLOIEMENT ACCOMPAGNÉ", d: "Je vous accompagne jusqu'au bout. La mise en ligne technique et la configuration de votre serveur sont incluses pour tout projet lié à une offre de maintenance, vous garantissant un démarrage sans stress" }
             ].map((item, i) => (
                 <div key={i} className="p-12 bg-white rounded-[3.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
                     <item.icon className="text-blue-600 mb-8" size={32} />
@@ -281,7 +278,7 @@ export default function HomePage() {
       {/* 6. MOT DU FONDATEUR */}
       <section className="relative z-10 py-40 px-8 max-w-4xl mx-auto text-center">
         <Smile size={48} className="text-blue-600 mx-auto mb-10" />
-        <h2 className="text-4xl md:text-6xl font-[1000] uppercase italic tracking-tighter mb-10 italic">C&apos;est personnel.</h2>
+        <h2 className="text-4xl md:text-6xl font-[1000] uppercase italic tracking-tighter mb-10 italic text-blue-600">C&apos;est personnel.</h2>
         <p className="text-2xl text-slate-500 font-medium italic leading-relaxed mb-16">
             &quot;Chaque projet qui sort du studio porte mon nom. Je ne livre rien dont je ne sois pas fier à 100%. Travailler ensemble, c&apos;est choisir un artisan qui prend votre réussite à cœur.&quot;
         </p>
@@ -295,9 +292,12 @@ export default function HomePage() {
                 Parlons de <br/><span className="text-blue-500">demain.</span>
             </h2>
             <div className="flex flex-col items-center gap-12">
-                <button className="bg-blue-600 text-white px-16 py-10 rounded-[3rem] font-[1000] uppercase text-sm tracking-[0.4em] shadow-2xl hover:bg-white hover:text-slate-950 transition-all">
-                    Demander mon devis gratuit
-                </button>
+                <a 
+                    href="/contact"
+                    className="bg-blue-600 text-white px-12 py-8 rounded-[2.5rem] font-[1000] uppercase text-sm tracking-[0.3em] shadow-2xl hover:scale-105 transition-all flex items-center gap-4 group w-fit"
+                  >
+                    Demander mon devis <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                </a>
                 <div className="flex flex-wrap justify-center gap-10 opacity-30 text-[10px] font-black uppercase tracking-[0.5em] italic">
                     <span>Code Artisanal</span>
                     <span>Design Haute Couture</span>
@@ -305,7 +305,7 @@ export default function HomePage() {
                 </div>
             </div>
             <p className="mt-40 text-[10px] font-black uppercase tracking-[0.8em] text-slate-700">
-                © 2026 KZV.STUDIO — BEYOND DIGITAL STANDARDS
+                © 2026 KZV.STUDIO — développeur web fullstack. 
             </p>
         </div>
       </footer>
